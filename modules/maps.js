@@ -155,8 +155,8 @@ function autoMap() {
     var customVars = MODULES["maps"];
     var prestige = autoTrimpSettings.Prestige.selected;
     if (prestige != "Off" && game.options.menu.mapLoot.enabled != 1) toggleSetting('mapLoot');
-    if (game.global.repeatMap == true && !game.global.mapsActive && !game.global.preMapsActive) repeatClicked();
-    if ((game.options.menu.repeatUntil.enabled == 1 || game.options.menu.repeatUntil.enabled == 2 || game.options.menu.repeatUntil.enabled == 3) && !game.global.mapsActive && !game.global.preMapsActive) toggleSetting('repeatUntil');
+    if (game.global.repeatMap == true && !game.global.mapsActive && !game.global.preMapsActive) {repeatClicked();console.log("badmojo1");
+    if ((game.options.menu.repeatUntil.enabled == 1 || game.options.menu.repeatUntil.enabled == 2 || game.options.menu.repeatUntil.enabled == 3) && !game.global.mapsActive && !game.global.preMapsActive) {toggleSetting('repeatUntil'); console.log("badmojo2");}
     if (game.options.menu.exitTo.enabled != 0) toggleSetting('exitTo');
     if (game.options.menu.repeatVoids.enabled != 0) toggleSetting('repeatVoids');
     var challSQ = game.global.runningChallengeSquared;
@@ -273,8 +273,10 @@ function autoMap() {
 
     if (getPageSetting('DisableFarm') > 0) {
         shouldFarm = (calcHDratio() >= getPageSetting('DisableFarm'));
-        if (game.options.menu.repeatUntil.enabled == 1 && shouldFarm)
+        if (game.options.menu.repeatUntil.enabled == 1 && shouldFarm) {
             toggleSetting('repeatUntil');
+            console.log("badmojo3");
+        }
     }
     if (game.global.spireActive) {
         enemyDamage = calcSpire(99, game.global.gridArray[99].name, 'attack');
@@ -587,24 +589,30 @@ function autoMap() {
             var targetPrestige = autoTrimpSettings.Prestige.selected;
             if (!game.global.repeatMap) {
                 repeatClicked();
+                console.log("badmojo4");
             }
             if (!shouldDoMaps && (game.global.mapGridArray[game.global.mapGridArray.length - 1].special == targetPrestige && game.mapUnlocks[targetPrestige].last >= (game.global.world + extraMapLevels - 9))) {
                 repeatClicked();
+                console.log("badmojo5");
             }
             if (shouldDoHealthMaps && game.global.mapBonus >= getPageSetting('MaxMapBonushealth') - 1) {
                 repeatClicked();
                 shouldDoHealthMaps = false;
+                console.log("badmojo6");
             }
             if (doMaxMapBonus && game.global.mapBonus >= getPageSetting('MaxMapBonuslimit') - 1) {
                 repeatClicked();
                 doMaxMapBonus = false;
+                console.log("badmojo7");
             }
         } else {
             if (game.global.repeatMap) {
+                console.log("badmojo8");
                 repeatClicked();
             }
             if (restartVoidMap) {
                 mapsClicked(true);
+                console.log("badmojo9");
             }
         }
     } else if (!game.global.preMapsActive && !game.global.mapsActive) {
