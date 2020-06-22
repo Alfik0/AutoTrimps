@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         AutoTrimps-Alfik0
 // @version      1.0-Alfik0
-// @namespace    https://Zorn192.github.io/AutoTrimps
-// @updateURL    https://Zorn192.github.io/AutoTrimps/.user.js
+// @namespace    https://Alfik0.github.io/AutoTrimps
+// @updateURL    https://Alfik0.github.io/AutoTrimps/.user.js
 // @description  Automate all the trimps!
 // @author       zininzinin, spindrjr, Ishkaru, genBTC, Zeker0, Alfik0
 // @include      *trimps.github.io*
